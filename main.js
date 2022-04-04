@@ -1,5 +1,5 @@
-var rightDisplay = document.getElementById('right-display');
-var leftDisplay = document.getElementById('left-display');
+const rightDisplay = document.getElementById('right-display');
+const leftDisplay = document.getElementById('left-display');
 
 function generateRandom(max, min){
     return Math.floor(Math.random()*(max-min+1))+min;
@@ -10,7 +10,7 @@ function generatePin(){
     leftDisplay.value = pin;
 }
 
-var digitCount = 0;
+let digitCount = 0;
 function displayValue(id){    
     if(digitCount <4){
         const value = document.getElementById(id).innerText;
@@ -20,10 +20,10 @@ function displayValue(id){
     }
 }
 
-var tryCount = 3;
+let tryCount = 3;
 function checkMatch(){
-    let matched = document.getElementById('match');
-    let unmatched = document.getElementById('no-match');
+    const matched = document.getElementById('match');
+    const unmatched = document.getElementById('no-match');
     if(leftDisplay.value == rightDisplay.value && tryCount > 0){
         matched.style.display = 'block';
         unmatched.style.display = 'none';
@@ -42,7 +42,7 @@ function checkMatch(){
 
 function cancelDigit(){
     let currentValue = rightDisplay.value;
-    var canceledValue = '';
+    let canceledValue = '';
     for (let i = 0; i < currentValue.length - 1; i++) {
         canceledValue = canceledValue + currentValue[i];
     } 
